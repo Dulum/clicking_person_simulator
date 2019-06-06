@@ -1,6 +1,8 @@
 import tkinter as tk
-import time
-my_file = open('deleteme.txt', 'w')
+import sys
+
+dump_file = sys.argv[1]
+my_file = open(dump_file, 'w')
         
 
 def two_keys_generator(key):
@@ -10,7 +12,7 @@ def two_keys_generator(key):
     
     def key_Key(event):
             
-        action = str(event.time) + ': ' + key + event.keysym
+        action = str(event.time) + ': ' + key + event.keysym + '\n'
         my_file.write(action)
     return key_Key
     
